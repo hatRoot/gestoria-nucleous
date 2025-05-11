@@ -1,38 +1,51 @@
 /* =======================================================
    1. ESTILOS GENERALES DEL SITIO
-   ======================================================= */
+   =======================================================
+   Aquí defines cosas que afectan todo el sitio web:
+   márgenes, fuentes, colores generales, etc.
+*/
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
+
 /* =======================================================
    2. BARRA SUPERIOR DE CONTACTO
-   ======================================================= */
+   =======================================================
+   Es la franja azul que muestra tu número de WhatsApp
+   y correo. Aquí controlas su color, espaciado y diseño.
+*/
 .top-bar {
-  background-color: #08a5ff;     /* Azul fuerte */
+  background-color: #08a5ff;
   padding: 10px 0;
   font-size: 16px;
   color: white;
-}
-
-.contact-info {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding-left: 80px;
+  z-index: 999; /* Asegura que esté por debajo de la barra de navegación */
+  position: relative; /* Asegura que no se superponga de manera incorrecta */
 }
 
 /* =======================================================
-   3. BARRA DE NAVEGACIÓN
-   ======================================================= */
+   3. BARRA DE NAVEGACIÓN PRINCIPAL - FIXED AL HACER SCROLL
+   =======================================================
+   Aquí se aplica el estilo para hacer que la barra de navegación
+   se quede fija cuando el usuario hace scroll hacia abajo.
+*/
+
 .nav-bar {
-  background-color: #f5f5f7;
-  padding: 15px 0;
-  border-bottom: 1px solid #ccc;
+  background-color: rgba(245, 245, 247, 0.95);  /* Fondo ligeramente transparente */
+  padding: 15px 0;                             /* Padding adecuado */
+  border-bottom: 1px solid #ccc;               /* Línea inferior sutil */
+  position: fixed;                             /* Fija el menú al hacer scroll */
+  top: 0;                                      /* Alineación al tope */
+  left: 0;
+  right: 0;
+  width: 100%;                                 /* Asegura que ocupe todo el ancho */
+  z-index: 1000;                               /* Coloca la barra encima de la barra superior */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Sombra suave para resaltar */
+  transition: background-color 0.3s ease;       /* Suaviza el cambio de color de fondo */
 }
+
 
 .nav-container {
   max-width: 1200px;
@@ -43,28 +56,12 @@ body {
   padding: 0 30px;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.nav-links a,
-.dropdown-toggle {
-  text-decoration: none;
-  font-weight: bold;
-  color: #333;
-  font-size: 16px;
-}
-
-.nav-links a:visited,
-.dropdown-toggle:visited {
-  color: #333;
-}
-
 /* =======================================================
-   4. LOGO
-   ======================================================= */
+   4. LOGO NUCLEOUS
+   =======================================================
+   Este estilo da tamaño, color y fuente a la palabra
+   “Nucleous” que aparece como logotipo.
+*/
 .logo {
   text-decoration: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -83,8 +80,11 @@ body {
 }
 
 /* =======================================================
-   5. MENÚ DESPLEGABLE
-   ======================================================= */
+   5. MENÚ DESPLEGABLE (Dropdown)
+   =======================================================
+   Este bloque da estilo al menú que se abre cuando 
+   pasas el mouse sobre “Trámites vehiculares”.
+*/
 .dropdown {
   position: relative;
 }
@@ -115,133 +115,513 @@ body {
   background-color: #f0f0f0;
 }
 
+/* === ENLACES DEL MENÚ === */
+.nav-links {
+  display: flex;              /* Acomoda los elementos en una fila */
+  align-items: center;        /* Centra los elementos verticalmente */
+  gap: 30px;                  /* Espacio entre los enlaces */
+}
+
+/* === ENLACES DE MENÚ (Trámites y Blog) === */
+.nav-links a,
+.dropdown-toggle {
+  text-decoration: none;      /* Quitar subrayado */
+  font-weight: bold;          /* Negrita */
+  color: #333;                /* Gris oscuro */
+  font-size: 16px;
+}
+
+/* === Evita que los enlaces se pongan morados tras hacer clic === */
+.nav-links a:visited,
+.dropdown-toggle:visited {
+  color: #333;
+}
+
 /* =======================================================
-   6. SECCIÓN PRINCIPAL (HERO)
-   ======================================================= */
-.hero-section {
+   6. EFECTO HOVER EN EL LOGO
+   =======================================================
+   Cambia el color del logo cuando pasas el mouse.
+*/
+.logo:hover {
+  color: #005e9e;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* =======================================================
+   7. AGREGAR EFECTO DE SCROLL AL MENÚ
+   =======================================================
+   Este bloque detecta el desplazamiento y ajusta el fondo
+   de la barra para darle un efecto de transparencia.
+*/
+body {
+  padding-top: 80px; /* Espacio superior para evitar que el contenido quede cubierto */
+}
+
+.nav-bar.scrolled {
+  background-color: rgba(245, 245, 247, 1); /* Fondo opaco cuando se hace scroll */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  /* Sombra más intensa al hacer scroll */
+}
+
+
+/* === SECCIÓN HERO PRINCIPAL CON FONDO Y CAPA GRIS AHUMADO === */
+.hero-gestoria {
+  background: url('/Users/admin/Documents/Gestoria site/mustang1.jpg') no-repeat center center / cover;
+  padding: 400px 20px;
+  text-align: left; /* Cambiado a izquierda */
   position: relative;
-  background: url('https://images.unsplash.com/photo-1521747116042-5d40a9b7fa1d?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjI1OXwwfDF8c2VhY2h8MHx8YXV0b3BhcnR8ZW58MHx8fHwxNjcwODMwMjY1&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 30px;
+  overflow: hidden;
 }
 
 .hero-overlay {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
-  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4); /* Aumentado el gris para mayor visibilidad */
   padding: 40px;
-  max-width: 1200px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-}
-
-.hero-left {
-  flex: 1;
-  color: #fff; /* Blanco para el texto, para destacar mejor sobre el fondo oscuro */
-}
-
-.hero-left h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.hero-left h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.hero-left h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-right img {
-  max-width: 300px;
-  height: auto;
-  border-radius: 15px;
-}
-
-/* =======================================================
-   7. BOTÓN DE WHATSAPP FLOTANTE
-   ======================================================= */
-.whatsapp-button {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.hero-titulo {
+  font-size: 3rem; /* Aumentado el tamaño */
+  font-weight: bold;
+  color: white; /* Cambiado a blanco */
+  margin-bottom: 20px;
+}
+
+.hero-descripcion {
+  font-size: 1.2rem;
+  color: white; /* Cambiado a blanco */
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.btn-whatsapp {
   background-color: #25D366;
   color: white;
-  font-size: 30px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.whatsapp-button:hover {
-  background-color: #1ebe5c;
+.btn-whatsapp:hover {
+  background-color: #1ebe5b;
+  transform: scale(1.05);
+}
+
+/* Animación suave */
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: aparecer 1s ease-out forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.imagen-derecha {
+  width: 200px; /* Tamaño de la imagen */
+  height: auto;
+  object-fit: contain; /* Para que la imagen mantenga su aspecto */
+  margin-left: 30px;
 }
 
 
-/* =======================================================
-   8. DISEÑO RESPONSIVO PARA CELULARES Y TABLETS
-   ======================================================= */
-@media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column;
-    padding-left: 20px;
-    font-size: 14px;
-  }
+/* Animación suave */
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: aparecer 1s ease-out forwards;
+}
 
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .hero-overlay {
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .hero-left h1 {
-    font-size: 28px;
-  }
-
-  .hero-left h2 {
-    font-size: 20px;
-  }
-
-  .hero-left h3 {
-    font-size: 16px;
-  }
-
-  .hero-right img {
-    max-width: 220px;
-  }
-
-  .whatsapp-button {
-    bottom: 20px;
-    right: 20px;
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+
+
+/* Sección de gestoría vehicular */
+.gestoria-vehicular {
+  background: linear-gradient(135deg, #f1f1f1, #c4c4c4); /* Gradiente de grises más suave */
+  color: #333; /* Gris oscuro para el texto */
+  padding: 50px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* Eliminamos el margen inferior para hacer que se conecte mejor con la sección azul */
+}
+
+.gestoria-vehicular .titulo-seccion {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #333; /* Gris oscuro */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.gestoria-vehicular .descripcion {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.gestoria-vehicular .descripcion strong {
+  color: #FF6347; /* Color naranja para resaltar palabras clave */
+  font-weight: bold;
+}
+
+/* Agregar animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para los botones */
+.gestoria-vehicular .btn-contacto {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp color */
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.gestoria-vehicular .btn-contacto:hover {
+  background-color: #128C7E; /* WhatsApp hover color */
+  transform: scale(1.05);
+}
+
+
+/* SECCIÓN INFORMATIVA */
+.info-section {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.info-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.info-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #08a5ff;
+}
+
+.info-container p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* SECCIÓN DE SERVICIOS - Tarjetas animadas con fondo azul serio */
+.services-section {
+  background-color: #1c2a44; /* Azul prusiano */
+  color: white;
+  padding: 60px 30px;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.services-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #cbd6e2;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.07); /* Ahumado claro */
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.card p {
+  font-size: 15px;
+  color: #d0dbe8;
+}
+
+/* Estilo de la sección */
+.documentos-gestoria {
+  background-color: #1D3557; /* Azul Indigo */
+  padding: 50px 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+/* Alineación de la container para centrar contenido */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Estilo de los títulos */
+.titulo-seccion {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #F1FAEE; /* Tono claro */
+}
+
+/* Estilo de los párrafos */
+.descripcion {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #F1FAEE;
+}
+
+/* Estilo para las tarjetas */
+.documentos-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.documento-card {
+  background-color: #457B9D; /* Azul más claro */
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.documento-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.documento-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #F1FAEE;
+}
+
+.documento-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.documento-card ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Animación de la sección */
+.documentos-gestoria {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: aparecer 1s forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos generales */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sección de documentos */
+.documentos-gestoria {
+  background-color: #F1FAEE; /* Gris claro */
+  padding: 50px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.titulo-seccion {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #1D3557; /* Azul oscuro */
+}
+
+.descripcion {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.documentos-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.documento-card {
+  background-color: #ffffff;
+  border: 2px solid #1D3557; /* Borde azul */
+  border-radius: 10px;
+  padding: 20px;
+  width: 48%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.documento-card h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  color: #1D3557;
+}
+
+.documento-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.documento-card li {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Sección de contacto */
+.contacto {
+  background-color: #1D3557; /* Azul oscuro */
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.contacto .titulo-seccion {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: white; /* Color blanco para el título */
+}
+
+.informacion-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.informacion-item {
+  width: 30%;
+}
+
+.informacion-item h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.informacion-item p {
+  font-size: 1.1em;
+}
+
+/* Botón de WhatsApp */
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp color */
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E; /* WhatsApp hover color */
+  transform: scale(1.05);
+}
+
+/* Animación de la sección */
+.contacto {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: aparecer 1s forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

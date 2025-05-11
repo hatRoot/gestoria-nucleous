@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- =======================================================
+       CABECERA DEL SITIO
+       Aquí defines el título del sitio, el tipo de texto
+       (charset), y adaptabilidad para móviles (viewport).
+  ======================================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nucleous | Gestoría Vehicular</title>
+
+  <!-- Enlace a tu archivo CSS donde están los estilos -->
   <link rel="stylesheet" href="style.css" />
+  <!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animate On Scroll CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
 </head>
+
 <body>
 
-  <!-- Barra de contacto -->
+  <!-- =======================================================
+       1. BARRA SUPERIOR DE CONTACTO
+       Esta es una franja azul arriba del sitio con tu número,
+       WhatsApp y correo.
+  ======================================================= -->
   <div class="top-bar">
     <div class="contact-info">
       <span>55 3575 7364</span>
@@ -19,10 +37,17 @@
     </div>
   </div>
 
-  <!-- Barra de navegación -->
+  <!-- =======================================================
+       2. BARRA DE NAVEGACIÓN
+       Aquí va el logotipo de tu negocio y el menú con enlaces
+       como “Trámites” y “Blog”.
+  ======================================================= -->
   <nav class="nav-bar">
     <div class="nav-container">
+      <!-- Logo (texto grande que dice Nucleous) -->
       <a href="#home" class="logo">Nucleous</a>
+      
+      <!-- Enlaces del menú -->
       <div class="nav-links">
         <div class="dropdown">
           <a href="#tramites" class="dropdown-toggle">Trámites vehiculares ▾</a>
@@ -37,24 +62,211 @@
     </div>
   </nav>
 
-  <!-- Sección principal con la imagen y el cuadro ahumado -->
-  <section class="hero-section">
-    <div class="hero-overlay">
-      <div class="hero-left">
-        <h1>Tu coche en regla sin salir de casa</h1>
-        <h2>Trámites vehiculares rápidos y confiables</h2>
-        <h3>Estado de México | CDMX | Morelos</h3>
+  <!-- =======================================================
+       3. SECCIÓN PRINCIPAL (HERO SECTION)
+       Aquí tienes la imagen de fondo y el gris ahumado encima.
+  ======================================================= -->
+<section class="hero-gestoria">
+  <div class="hero-overlay">
+    <div class="container">
+      <h1 class="hero-titulo animar">Gestoría Vehicular de EDOMEX, Morelos y CDMX</h1>
+      <p class="hero-descripcion animar">Gestoría y trámites vehiculares en México, Morelos y Ciudad de México de forma fácil, rápida, segura y transparente.</p>
+      <a href="https://wa.me/525529618887" target="_blank" class="btn-whatsapp animar">Contáctanos por WhatsApp</a>
+    </div>
+    <!-- Imagen pequeña a la derecha -->
+    <img src="/Users/admin/Documents/Gestoria site/placas.png" alt="Imagen pequeña" class="imagen-derecha">
+  </div>
+</section>
+
+
+<!-- SECCIÓN INFORMATIVA -->
+<section class="gestoria-vehicular">
+  <div class="container">
+    <h2 class="titulo-seccion">Gestoría de trámites vehiculares en Estado de México, Morelos y Ciudad de México</h2>
+    <p class="descripcion">
+      Somos expertos en la gestión de trámites vehiculares del <strong>Estado de México, Morelos y Ciudad de México</strong>.
+    </p>
+    <p class="descripcion">
+      En <strong>Goparken</strong>, contamos con un equipo de gestores que operan directamente en campo. Nuestro objetivo es ofrecerte un servicio especializado y de excelente calidad que haga de tu trámite un proceso fácil, rápido y seguro.
+    </p>
+    <p class="descripcion">
+      Contamos con más de <strong>cuatro años de experiencia</strong> en el sector, lo que nos avala como la mejor empresa actualmente en el ramo de la gestoría vehicular en México. Nuestro equipo está comprometido con brindarte atención confiable y resultados rápidos.
+    </p>
+    <a href="https://wa.me/525529618887" class="btn-contacto" target="_blank">Contáctanos por WhatsApp</a>
+  </div>
+</section>
+
+
+
+<!-- SECCIÓN DE SERVICIOS -->
+<section class="services-section">
+  <div class="services-container">
+    <h2 class="services-title">Gestoría Vehicular de EDOMEX, Morelos y CDMX</h2>
+    <p class="services-subtitle">Trámites fáciles, rápidos y seguros</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Alta de placas de Estado México</h3>
+        <p>Gestoría de trámite de placas para auto nuevo y usado.</p>
       </div>
-      <div class="hero-right">
-        <img src="auto-seguro.png" alt="Trámite vehicular" />
+      <div class="card">
+        <h3>Verificación vehicular EDOMEX</h3>
+        <p>Gestoría para la verificación vehicular sin hacer filas.</p>
+      </div>
+      <div class="card">
+        <h3>Renovación de placas</h3>
+        <p>Reemplacamiento de EDOMEX en 5 a 12 días hábiles.</p>
+      </div>
+      <div class="card">
+        <h3>Cambio de placas Morelos a EDOMEX</h3>
+        <p>Hacemos tu cambio de placas fácil y sin complicaciones.</p>
+      </div>
+      <div class="card">
+        <h3>Baja de placas EDOMEX</h3>
+        <p>Tramitamos tu baja de placas de forma ágil y segura.</p>
+      </div>
+      <div class="card">
+        <h3>Cambio de CDMX a EDOMEX</h3>
+        <p>Especialistas en cambio de placas de CDMX a EDOMEX.</p>
+      </div>
+      <div class="card">
+        <h3>Cambio de propietario</h3>
+        <p>Servicio de cambio de propietario en EDOMEX.</p>
+      </div>
+      <div class="card">
+        <h3>Reposición de tarjeta</h3>
+        <p>Reposición rápida de tarjeta de circulación EDOMEX.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: ¿Cómo funciona la gestoría...? -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6" data-aos="fade-down">
+      ¿Cómo funciona la gestoría de trámites vehiculares del Estado de México?
+    </h2>
+    <p class="text-center text-gray-700 text-lg mb-10 max-w-3xl mx-auto" data-aos="fade-up">
+      Son 4 pasos muy sencillos
+    </p>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Paso 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Paso 1: Contáctanos</h3>
+        <p class="text-gray-600 text-sm">
+          Escríbenos vía WhatsApp al <strong>55529618887</strong>. Te daremos toda la información necesaria sobre tu trámite.
+        </p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Paso 2: Envía tus documentos</h3>
+        <p class="text-gray-600 text-sm">
+          Manda tus documentos escaneados al correo <strong>contacto@gestoauto.com</strong> para su validación.
+        </p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Paso 3: Realiza el anticipo</h3>
+        <p class="text-gray-600 text-sm">
+          Al confirmar los documentos, haces un anticipo y nosotros ingresamos tu trámite oficialmente.
+        </p>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Paso 4: Entrega y liquidación</h3>
+        <p class="text-gray-600 text-sm">
+          Te avisamos cuando el trámite esté listo y acordamos la entrega para liquidar el servicio.
+        </p>
       </div>
     </div>
 
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/525535757364" class="whatsapp-button" target="_blank" title="Chatea con nosotros">
-      💬
-    </a>
-  </section>
+    <div class="mt-12 text-center max-w-4xl mx-auto text-gray-700 text-sm leading-relaxed" data-aos="fade-up">
+      <p>
+        En Goparken y Gestoauto nos comprometemos con nuestros clientes. Gracias a más de <strong>20 años de experiencia</strong>,
+        garantizamos una gestión eficaz, rápida y segura. Nuestro tiempo promedio de entrega es de <strong>5 a 12 días hábiles</strong>,
+        con un <strong>100% de eficiencia</strong> en los servicios contratados.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="documentos-gestoria">
+  <div class="container">
+    <h2 class="titulo-seccion">¿Qué documentos necesito para la gestoría de trámites vehiculares de EDOMEX?</h2>
+    <p class="descripcion">
+      Los documentos necesarios para realizar trámites vehiculares pueden variar dependiendo del tipo de trámite que se pretenda realizar. A continuación, te mostramos los documentos generales que usualmente se requieren.
+    </p>
+    <div class="documentos-container">
+      <div class="documento-card">
+        <h3>Documentos Generales</h3>
+        <ul>
+          <li>Credencial del INE o IFE actualizada.</li>
+          <li>Comprobante de domicilio vigente (no mayor a tres meses).</li>
+          <li>Copia de la Factura de origen y Carta de factura, en caso de crédito.</li>
+        </ul>
+      </div>
+      <div class="documento-card">
+        <h3>Para Automóviles Usados</h3>
+        <ul>
+          <li>El pago de las últimas cinco tenencias.</li>
+          <li>Tarjeta de circulación.</li>
+          <li>Placas o documento que acredita la baja de placas.</li>
+          <li>Facturas adicionales que existan.</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="titulo-seccion">¿Cuánto tiempo dura la gestoría de trámites vehiculares del Estado de México?</h3>
+    <p class="descripcion">
+      El tiempo estimado para entregar los trámites o documentos es de entre 5 a 12 días hábiles, dependiendo del tipo de trámite y la validación por parte de las autoridades.
+    </p>
+    <p class="descripcion">
+      Gracias a nuestros más de 20 años de experiencia, podemos agilizar el proceso para entregar tu trámite en el menor tiempo posible.
+    </p>
+  </div>
+</section>
+
+
+<section class="contacto">
+  <div class="container">
+    <h2 class="titulo-seccion">Contacto</h2>
+    <div class="informacion-contacto">
+      <div class="informacion-item">
+        <h3>Atención por Whatsapp:</h3>
+        <p>55 35757364</p>
+      </div>
+      <div class="informacion-item">
+        <h3>Email:</h3>
+        <p>gestor@nucleous.com</p>
+      </div>
+      <div class="informacion-item">
+        <h3>Dirección:</h3>
+        <p>Av Eugenia 1153, Narvarte Poniente. Lunes, miércoles y viernes de 9:30 am a 6 pm. (Previa cita y conversación por WhatsApp).</p>
+      </div>
+    </div>
+    <a href="https://wa.me/525529618887" class="btn-whatsapp" target="_blank">Contáctanos por WhatsApp</a>
+  </div>
+</section>
+
+  <!-- =======================================================
+       4. PIE DE PÁGINA (FOOTER) - OPCIONAL
+       Aquí puedes poner tus redes sociales, aviso legal,
+       derechos reservados, etc.
+  ======================================================= -->
+  <!--
+  <footer class="footer">
+    <p>© 2025 Nucleous. Todos los derechos reservados.</p>
+  </footer>
+  -->
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>
