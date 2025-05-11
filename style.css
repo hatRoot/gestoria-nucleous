@@ -1,0 +1,187 @@
+/* =======================================================
+   1. ESTILOS GENERALES DEL SITIO
+   =======================================================
+   Aquí defines cosas que afectan todo el sitio web:
+   márgenes, fuentes, colores generales, etc.
+*/
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =======================================================
+   2. BARRA SUPERIOR DE CONTACTO
+   =======================================================
+   Es la franja azul que muestra tu número de WhatsApp
+   y correo. Aquí controlas su color, espaciado y diseño.
+*/
+.top-bar {
+  background-color: #08a5ff;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+}
+
+.contact-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 80px;
+  color: white;
+}
+
+
+/* =======================================================
+   3. BARRA DE NAVEGACIÓN PRINCIPAL
+   =======================================================
+   Aquí diseñas el menú donde está el logo y los enlaces
+   como “Trámites vehiculares” y “Blog”.
+*/
+.nav-bar {
+  background-color: #f5f5f7;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+/* === ENLACES DEL MENÚ === */
+.nav-links a,
+.dropdown-toggle {
+  text-decoration: none;        /* Quita el subrayado */
+  font-weight: bold;            /* Negritas */
+  color: #333;                  /* Color gris oscuro (no morado) */
+  margin-left: 20px;            /* Espacio entre enlaces */
+}
+
+/* Evita que se pongan morados después de dar clic */
+.nav-links a:visited,
+.dropdown-toggle:visited {
+  color: #333;
+}
+
+
+/* =======================================================
+   4. LOGO NUCLEOUS
+   =======================================================
+   Este estilo da tamaño, color y fuente a la palabra
+   “Nucleous” que aparece como logotipo.
+*/
+.logo {
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-bar .logo {
+  font-size: 55px;
+  font-weight: 800;
+  color: #08a5ff;
+}
+
+
+/* =======================================================
+   5. MENÚ DESPLEGABLE (Dropdown)
+   =======================================================
+   Este bloque da estilo al menú que se abre cuando 
+   pasas el mouse sobre “Trámites vehiculares”.
+*/
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+/* === CONTENEDOR DE ENLACES EN LA NAVBAR === */
+.nav-links {
+  display: flex;              /* Acomoda en fila */
+  align-items: center;        /* Centrado vertical */
+  gap: 30px;                  /* Espacio entre ellos */
+}
+
+/* === ENLACES DE MENÚ (Trámites y Blog) === */
+.nav-links a,
+.dropdown-toggle {
+  text-decoration: none;     /* Quitar subrayado */
+  font-weight: bold;         /* Negrita */
+  color: #333;               /* Gris oscuro */
+  font-size: 16px;
+}
+
+/* === Evita que se pongan morados tras hacer clic === */
+.nav-links a:visited,
+.dropdown-toggle:visited {
+  color: #333;
+}
+
+
+
+/* =======================================================
+   6. EFECTO HOVER EN EL LOGO
+   =======================================================
+   Cambia el color del logo cuando pasas el mouse.
+*/
+.logo:hover {
+  color: #005e9e;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+
+/* =======================================================
+   7. ESTILOS RESPONSIVOS PARA CELULARES Y TABLETS
+   =======================================================
+   Este bloque ajusta el diseño para que se vea bien
+   en pantallas pequeñas como celulares.
+*/
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+}
