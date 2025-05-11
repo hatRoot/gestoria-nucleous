@@ -1,23 +1,16 @@
 /* =======================================================
    1. ESTILOS GENERALES DEL SITIO
-   =======================================================
-   Aquí defines cosas que afectan todo el sitio web:
-   márgenes, fuentes, colores generales, etc.
-*/
+   ======================================================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-
 /* =======================================================
    2. BARRA SUPERIOR DE CONTACTO
-   =======================================================
-   Es la franja azul que muestra tu número de WhatsApp
-   y correo. Aquí controlas su color, espaciado y diseño.
-*/
+   ======================================================= */
 .top-bar {
-  background-color: #08a5ff;
+  background-color: #08a5ff;     /* Azul fuerte */
   padding: 10px 0;
   font-size: 16px;
   color: white;
@@ -30,16 +23,11 @@ body {
   gap: 10px;
   align-items: center;
   padding-left: 80px;
-  color: white;
 }
 
-
 /* =======================================================
-   3. BARRA DE NAVEGACIÓN PRINCIPAL
-   =======================================================
-   Aquí diseñas el menú donde está el logo y los enlaces
-   como “Trámites vehiculares” y “Blog”.
-*/
+   3. BARRA DE NAVEGACIÓN
+   ======================================================= */
 .nav-bar {
   background-color: #f5f5f7;
   padding: 15px 0;
@@ -55,28 +43,28 @@ body {
   padding: 0 30px;
 }
 
-/* === ENLACES DEL MENÚ === */
-.nav-links a,
-.dropdown-toggle {
-  text-decoration: none;        /* Quita el subrayado */
-  font-weight: bold;            /* Negritas */
-  color: #333;                  /* Color gris oscuro (no morado) */
-  margin-left: 20px;            /* Espacio entre enlaces */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-/* Evita que se pongan morados después de dar clic */
+.nav-links a,
+.dropdown-toggle {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
 .nav-links a:visited,
 .dropdown-toggle:visited {
   color: #333;
 }
 
-
 /* =======================================================
-   4. LOGO NUCLEOUS
-   =======================================================
-   Este estilo da tamaño, color y fuente a la palabra
-   “Nucleous” que aparece como logotipo.
-*/
+   4. LOGO
+   ======================================================= */
 .logo {
   text-decoration: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -88,13 +76,15 @@ body {
   color: #08a5ff;
 }
 
+.logo:hover {
+  color: #005e9e;
+  cursor: pointer;
+  transition: color 0.3s;
+}
 
 /* =======================================================
-   5. MENÚ DESPLEGABLE (Dropdown)
-   =======================================================
-   Este bloque da estilo al menú que se abre cuando 
-   pasas el mouse sobre “Trámites vehiculares”.
-*/
+   5. MENÚ DESPLEGABLE
+   ======================================================= */
 .dropdown {
   position: relative;
 }
@@ -124,48 +114,91 @@ body {
 .dropdown-menu a:hover {
   background-color: #f0f0f0;
 }
-/* === CONTENEDOR DE ENLACES EN LA NAVBAR === */
-.nav-links {
-  display: flex;              /* Acomoda en fila */
-  align-items: center;        /* Centrado vertical */
-  gap: 30px;                  /* Espacio entre ellos */
+
+/* =======================================================
+   6. SECCIÓN PRINCIPAL (HERO)
+   ======================================================= */
+.hero-section {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1521747116042-5d40a9b7fa1d?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjI1OXwwfDF8c2VhY2h8MHx8YXV0b3BhcnR8ZW58MHx8fHwxNjcwODMwMjY1&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
 }
 
-/* === ENLACES DE MENÚ (Trámites y Blog) === */
-.nav-links a,
-.dropdown-toggle {
-  text-decoration: none;     /* Quitar subrayado */
-  font-weight: bold;         /* Negrita */
-  color: #333;               /* Gris oscuro */
-  font-size: 16px;
+.hero-overlay {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* === Evita que se pongan morados tras hacer clic === */
-.nav-links a:visited,
-.dropdown-toggle:visited {
-  color: #333;
+.hero-left {
+  flex: 1;
+  color: #fff; /* Blanco para el texto, para destacar mejor sobre el fondo oscuro */
 }
 
+.hero-left h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-left h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero-left h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* =======================================================
+   7. BOTÓN DE WHATSAPP FLOTANTE
+   ======================================================= */
+.whatsapp-button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5c;
+}
 
 
 /* =======================================================
-   6. EFECTO HOVER EN EL LOGO
-   =======================================================
-   Cambia el color del logo cuando pasas el mouse.
-*/
-.logo:hover {
-  color: #005e9e;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-
-/* =======================================================
-   7. ESTILOS RESPONSIVOS PARA CELULARES Y TABLETS
-   =======================================================
-   Este bloque ajusta el diseño para que se vea bien
-   en pantallas pequeñas como celulares.
-*/
+   8. DISEÑO RESPONSIVO PARA CELULARES Y TABLETS
+   ======================================================= */
 @media (max-width: 768px) {
   .contact-info {
     flex-direction: column;
@@ -183,5 +216,32 @@ body {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+  }
+
+  .hero-overlay {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left h2 {
+    font-size: 20px;
+  }
+
+  .hero-left h3 {
+    font-size: 16px;
+  }
+
+  .hero-right img {
+    max-width: 220px;
+  }
+
+  .whatsapp-button {
+    bottom: 20px;
+    right: 20px;
   }
 }
